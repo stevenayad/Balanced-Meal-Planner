@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:orderapp/Features/OrderMeal/presentation/views/userDetailsscreenview.dart';
+import 'package:orderapp/utilites/Appstyles.dart';
 import 'package:orderapp/utilites/customwidget/custombutton.dart';
 
 class contenthome extends StatelessWidget {
   const contenthome({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,27 +13,14 @@ class contenthome extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 20),
-          Text(
-            'Balanced Meal',
-            style: TextStyle(
-              fontWeight: FontWeight.w300,
-              fontSize: 30,
-              fontFamily: 'Poppins',
-              color: Color(0xffDADADA),
-            ),
-          ),
+          Text('Balanced Meal', style: Appstyles.fontsize40),
           const Spacer(),
           Text(
             'Craft your ideal meal effortlessly \n '
             'with our app Select nutritious \n '
             'ingredients tailored to your taste\n'
             'and well-being.',
-            style: TextStyle(
-              fontWeight: FontWeight.w300,
-              fontSize: 20,
-              fontFamily: 'Poppins',
-              color: const Color(0xffDADADA),
-            ),
+            style: Appstyles.fontsize20.copyWith(fontWeight: FontWeight.w300),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40.0),
@@ -46,10 +33,11 @@ class contenthome extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>const Userdetailsscreenview(),
+                    builder: (context) => const Userdetailsscreenview(),
                   ),
                 );
-              }, color: Color(0xffF25700),
+              },
+              color: Color(0xffF25700),
             ),
           ),
         ],

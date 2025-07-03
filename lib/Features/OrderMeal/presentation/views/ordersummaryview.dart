@@ -9,13 +9,14 @@ import 'package:orderapp/Features/OrderMeal/presentation/manger/ordercheckout/or
 import 'package:orderapp/Features/OrderMeal/presentation/manger/placeordercubit/placeordercubit.dart';
 import 'package:orderapp/Features/OrderMeal/presentation/views/widget/orderSummarybody.dart';
 import 'package:orderapp/utilites/customwidget/customappbar.dart';
+
 class Ordersummaryview extends StatelessWidget {
   final CaloriesCubit caloriesCubit;
   final double cal;
   final List<Ingredient> placedIngredients;
   final double totalCalories;
   final double price;
-  final Map<Ingredient, int> ingredientCounts; 
+  final Map<Ingredient, int> ingredientCounts;
 
   const Ordersummaryview({
     super.key,
@@ -35,7 +36,9 @@ class Ordersummaryview extends StatelessWidget {
           create: (_) => OrderSummaryCubit(initialOrders: placedIngredients),
         ),
         BlocProvider(create: (_) => PlaceorderCubit()),
-          BlocProvider(create: (_) => OrdercheckoutCubit(Checkoutimpelwmtation())),
+        BlocProvider(
+          create: (_) => OrdercheckoutCubit(Checkoutimpelwmtation()),
+        ),
       ],
       child: Scaffold(
         appBar: CustomProfileAppBar(title: 'Order Summary'),
@@ -44,7 +47,7 @@ class Ordersummaryview extends StatelessWidget {
             ingredientCounts: ingredientCounts,
             cal: cal,
             totalCalories: totalCalories,
-            price: price
+            price: price,
           ),
         ),
       ),

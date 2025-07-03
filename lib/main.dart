@@ -9,6 +9,7 @@ import 'package:orderapp/Services/firebaseServices.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FirebaseService.initializeFirebase();
+
   runApp(const BalancedMealApp());
 }
 
@@ -20,13 +21,20 @@ class BalancedMealApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => CaloriesCubit()),
-      
+
         BlocProvider<PlaceorderCubit>(create: (_) => PlaceorderCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Balanced Meal',
-        theme: ThemeData(fontFamily: 'Poppins'),
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+          textTheme: const TextTheme(
+            bodyLarge: TextStyle(fontFamily: 'Poppins'),
+            bodyMedium: TextStyle(fontFamily: 'Poppins'),
+            titleLarge: TextStyle(fontFamily: 'Poppins'),
+          ),
+        ),
 
         home: const Homescreenview(),
       ),

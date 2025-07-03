@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orderapp/utilites/Appstyles.dart';
 
 class Textinorderitem extends StatelessWidget {
   const Textinorderitem({super.key, required this.tittle});
@@ -9,12 +10,7 @@ class Textinorderitem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Text(
         tittle,
-        style: TextStyle(
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w600,
-          fontSize: 20,
-          color: Colors.grey[800],
-        ),
+        style: Appstyles.fontsize20.copyWith(color: Color(0xff1E1E1E)),
       ),
     );
   }

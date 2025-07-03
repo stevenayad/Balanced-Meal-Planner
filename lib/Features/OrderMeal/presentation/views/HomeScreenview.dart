@@ -6,8 +6,7 @@ class Homescreenview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: HomeScreen(),
-    );
+    debugPrint(DefaultTextStyle.of(context).style.fontFamily);
+    return Scaffold(body: HomeScreen());
   }
 }

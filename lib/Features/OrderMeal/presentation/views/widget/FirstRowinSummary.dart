@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:orderapp/Features/OrderMeal/data/Models/Intergretis.dart';
+import 'package:orderapp/utilites/Appstyles.dart';
 
 class FirstRowinorderSummary extends StatelessWidget {
   const FirstRowinorderSummary({super.key, required this.ingredient});
@@ -12,23 +13,14 @@ class FirstRowinorderSummary extends StatelessWidget {
         Flexible(
           child: Text(
             ingredient.name,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Poppins',
-            ),
+            style: Appstyles.fontsize16,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
         ),
         Text(
-          '${ingredient.price}',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: Colors.green,
-            fontFamily: 'Poppins',
-          ),
+          'Price: ${ingredient.price} ',
+          style: Appstyles.fontsize16.copyWith(fontWeight: FontWeight.w600),
         ),
       ],
     );

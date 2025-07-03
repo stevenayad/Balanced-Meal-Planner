@@ -11,7 +11,6 @@ class Orderitemview extends StatelessWidget {
   const Orderitemview({super.key, required this.Calories});
   final double Calories;
 
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -22,7 +21,6 @@ class Orderitemview extends StatelessWidget {
               (_) => IngredientCubit(FirebaseService())..fetchAllIngredients(),
         ),
         BlocProvider(create: (_) => PlaceorderCubit(targetCalories: Calories)),
-         
       ],
       child: Scaffold(
         appBar: CustomProfileAppBar(title: "Create your order"),

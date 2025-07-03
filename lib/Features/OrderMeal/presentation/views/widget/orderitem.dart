@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:orderapp/Features/OrderMeal/data/Models/Intergretis.dart';
 import 'package:orderapp/Features/OrderMeal/presentation/views/widget/activebutton.dart';
+import 'package:orderapp/utilites/Appstyles.dart';
 
 class OrderItemCard extends StatelessWidget {
   final Ingredient ingredient;
@@ -54,13 +55,16 @@ class OrderItemCard extends StatelessWidget {
                     Flexible(
                       child: Text(
                         ingredient.name,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        style: Appstyles.fontsize16,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     Text(
                       "${ingredient.calories} Cal",
-                      style: const TextStyle(fontSize: 12),
+                      style: Appstyles.fontsize14.copyWith(
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff959595),
+                      ),
                     ),
                   ],
                 ),
@@ -70,9 +74,11 @@ class OrderItemCard extends StatelessWidget {
                   children: [
                     Text(
                       "\$${ingredient.price}",
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: Appstyles.fontsize16.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                    Activebutton(ingredient:ingredient ,),
+                    Activebutton(ingredient: ingredient),
                   ],
                 ),
               ],

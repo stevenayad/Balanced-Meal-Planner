@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:orderapp/utilites/Appstyles.dart';
 
 class CustomProfileAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -26,11 +27,7 @@ class CustomProfileAppBar extends StatelessWidget
       ),
       title: Text(
         title,
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          fontFamily: 'Poppins',
-        ),
+        style: Appstyles.fontsize20.copyWith(color: Color(0xff1E1E1E)),
       ),
       centerTitle: true,
       backgroundColor: backgroundColor,
